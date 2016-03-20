@@ -12,8 +12,8 @@ brew update
 brew install git 
 brew install bash-completion
 
-# Install jvenv
-brew install jvenv
+# Install java
+brew install java
 
 # Install Caskroom
 brew tap caskroom/cask
