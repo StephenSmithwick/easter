@@ -13,7 +13,7 @@ brew install git
 brew install bash-completion
 
 # Install java
-brew install java
+brew install Caskroom/cask/java
 
 # Install Caskroom
 brew tap caskroom/cask
