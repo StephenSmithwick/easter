@@ -1,9 +1,9 @@
 Install
 ```
-GIST=59cb017eeedc9396cd94 VERSION=HEAD; wget -qO- https://gist.github.com/StephenSmithwick/$GIST/archive/$VERSION.zip | bsdtar -xvf-; mkdir -p $HOME/setup; mv $GIST-$VERSION/* $HOME/setup; rm -r $GIST-$VERSION; bash $HOME/setup/install.bash
+GIST=59cb017eeedc9396cd94 VERSION=HEAD; wget -qO- https://gist.github.com/StephenSmithwick/$GIST/archive/$VERSION.zip | bsdtar -xvf-; mkdir -p $HOME/easter; mv $GIST-$VERSION/* $HOME/easter; rm -r $GIST-$VERSION; bash $HOME/easter/install.bash
 ```
 
 Update
 ```
-GIST=59cb017eeedc9396cd94 VERSION=HEAD; wget -qO- https://gist.github.com/StephenSmithwick/$GIST/archive/$VERSION.zip | bsdtar -xvf-; mkdir -p $HOME/setup; mv $GIST-$VERSION/* $HOME/setup; rm -r $GIST-$VERSION
+GIST=59cb017eeedc9396cd94 VERSION=HEAD; wget -qO- https://gist.github.com/StephenSmithwick/$GIST/archive/$VERSION.zip | bsdtar -xvf-; mkdir -p $HOME/easter; mv $GIST-$VERSION/* $HOME/easter; rm -r $GIST-$VERSION
 ```

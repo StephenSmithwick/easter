@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Add setup to profile 
-echo 'source setup.bash' >> .profile
+echo 'source easter/setup.bash' >> .profile
 
 # Install Brew 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
