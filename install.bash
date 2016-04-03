@@ -7,17 +7,20 @@ echo 'source easter/setup.bash' >> .profile
 if [ ! -f /usr/local/bin/brew ]; then 
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew update
+  # Install Caskroom
+  brew tap caskroom/cask
+  brew install bash-completion
 fi
 
 # Install Git
-brew install git 
-brew install bash-completion
+if [ ! $(command -v git) ]; then 
+  brew install git 
+fi
 
 # Install java
-brew install Caskroom/cask/java
-
-# Install Caskroom
-brew tap caskroom/cask
+if [ ! $(command -v java) ]; then 
+  brew install Caskroom/cask/java
+fi
 
 # Install Docker Version Manager
 if [ ! -f ~/.dvm/dvm.shs ]; then 
