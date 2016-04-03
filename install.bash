@@ -32,7 +32,7 @@ log "will update brew"
 brew update
 
 # Install  Bash Completion
-if [ -f `brew --prefix`/etc/bash_completion ]; then
+if [ ! -f `brew --prefix`/etc/bash_completion ]; then
   log_installing "brew bash completion"
   brew install bash-completion
 else
@@ -57,7 +57,7 @@ else
 fi
 
 # Install Docker Version Manager
-if [ -f ~/.dvm/dvm.shs ]; then 
+if [ ! -f ~/.dvm/dvm.sh ]; then 
   log_installing dvm
   curl -sL https://download.getcarina.com/dvm/latest/install.sh | sh
 else
