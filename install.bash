@@ -23,6 +23,6 @@ if [ ! $(command -v java) ]; then
 fi
 
 # Install Docker Version Manager
-if [ ! -f ~/.dvm/dvm.shs ]; then 
+if [ -f ~/.dvm/dvm.shs ]; then 
   curl -sL https://download.getcarina.com/dvm/latest/install.sh | sh
 fi
