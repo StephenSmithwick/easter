@@ -6,7 +6,7 @@ echo "Installing Easter Project:"
 echo 'source easter/setup.bash' >> .profile
 
 function log {
-  " - Easter $@"
+  echo " - Easter $@"
 }
 
 function log_installing {
