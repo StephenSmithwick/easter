@@ -5,28 +5,48 @@ echo "Installing Easter Project:"
 # Add setup to profile 
 echo 'source easter/setup.bash' >> .profile
 
+
 function log {
   echo " - Easter $@"
 }
 
-function log_installing {
-  log "will install: $@"
+function log_installed {
+  log "found $@"
 }
 
-function log_installed {
-  log "discovered: $@"
+function log_installing {
+  log "install $@"
+}
+
+function dep {
+  local name=$1; shift
+  local file bin install
+  local "${@}"
+  if [ ! -z ${file} ] && [ ! -f "${file}" ]; then
+    log "will install: $name"
+    eval "${install}"
+  elif [ ! -z ${bin} ] && [ ! $(command -v ${bin}) ]; then
+    log "will install: $name"
+    eval "${install}"
+  else
+    log "wont install: $name"
+  fi
 }
 
 # Install Brew
-if [ ! -f /usr/local/bin/brew ]; then 
-  log_installing brew
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  
-  # Install Caskroom
+dep "HomeBrew" file=/usr/local/bin/brew install="
+  /usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"
   brew tap caskroom/cask
-else 
-  log_installed brew
-fi
+"
+# if [ ! -f /usr/local/bin/brew ]; then 
+#   log_installing brew
+#   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  
+#   # Install Caskroom
+#   brew tap caskroom/cask
+# else 
+#   log_installed brew
+# fi
 
 log "will update brew"
 brew update
