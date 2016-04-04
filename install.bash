@@ -7,7 +7,7 @@ echo "Installing Easter Project:"
 function add_easter_to_profile {
   echo 'source $HOME/easter/setup.bash' >> .profile
 }
-dep "Easter in Profile" bin=easter install=add_easter_to_profile
+dep "Profile setup" bin=easter install=add_easter_to_profile
 #####################################################################################################
 function install_brew {
   /usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"
@@ -21,7 +21,7 @@ brew update
 function install_bash_completion {
   brew install bash-completion
 }
-dep "HomeBrew Bash Completion" file=/usr/local/bin/brews install=install_bash_completion
+dep "HomeBrew Bash Completion" file=`brew --prefix`/etc/bash_completion install=install_bash_completion
 #####################################################################################################
 function install_git {
   brew install git
