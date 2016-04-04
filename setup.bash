@@ -11,3 +11,10 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Load Locations
 source $DIR/location*
+
+# Helper function
+function easter() {
+  echo "Easter is installed"
+}
+
+export -f easter
