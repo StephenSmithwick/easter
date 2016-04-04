@@ -35,8 +35,8 @@ function dep {
 
 # Install Brew
 dep "HomeBrew" file=/usr/local/bin/brews install="
-  /usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\"
-  brew tap caskroom/cask
+  /usr/bin/ruby -e \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\";
+  brew tap caskroom/cask;
 "
 # if [ ! -f /usr/local/bin/brew ]; then 
 #   log_installing brew
