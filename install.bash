@@ -5,7 +5,7 @@ source "$HOME/easter/utilities.bash"
 echo "Installing Easter Project:"
 #####################################################################################################
 function add_easter_to_profile {
-  echo 'source $HOME/easter/setup.bash' >> .profile
+  echo 'source $HOME/easter/setup.bash' >> $HOME/.bash_profile
 }
 dep "Profile setup" bin=easter install=add_easter_to_profile
 #####################################################################################################
@@ -38,8 +38,8 @@ function install_dvm {
 }
 dep "Docker Version Manager" file=~/.dvm/dvm.sh install=install_dvm
 #####################################################################################################
-function install_rvm {
-  \curl -sSL https://get.rvm.io | bash -s stable --ruby
+function install_rbenv {
+  brew install rbenv
 }
-dep "Ruby Version Manager" bin=rvm install=install_rvm
+dep "Ruby Build Environment" bin=rbenv install=install_rvm
 #####################################################################################################

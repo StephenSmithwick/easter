@@ -7,6 +7,9 @@ fi
 # Docker Version Manager
 source /Users/stephensmithwick/.dvm/dvm.sh
 
+# Ruby Version Manager
+eval "$(rbenv init -)"
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Load Locations
