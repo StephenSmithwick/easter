@@ -1,11 +1,3 @@
-function log {
-  echo " - Easter $@"
-}
-
-function log_installed {
-  log "found $@"
-}
-
 function log_installing {
   log "install $@"
 }
