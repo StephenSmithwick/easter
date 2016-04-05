@@ -1,5 +1,5 @@
-function log_installing {
-  log "install $@"
+function log {		
+  echo " - Easter $@"		
 }
 
 function dep {
