@@ -2,7 +2,7 @@
 
 echo "Downloading Easter Project:"
 
-local GIST=59cb017eeedc9396cd94 VERSION=HEAD
+GIST=59cb017eeedc9396cd94 VERSION=HEAD
 
 wget -qO- https://gist.github.com/StephenSmithwick/$GIST/archive/$VERSION.zip | bsdtar -xvf- 
 
