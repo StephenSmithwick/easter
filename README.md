@@ -1,4 +1,5 @@
-Easter Project -- OSX setup script
+# Easter Project -- OSX setup script
+
 by Stephen Smithwick
 
 This project is a small gist to install all the dependencies that I usually need on a new osx install.
