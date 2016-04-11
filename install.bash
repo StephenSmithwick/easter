@@ -40,6 +40,7 @@ dep "Docker Version Manager" file=~/.dvm/dvm.sh install=install_dvm
 #####################################################################################################
 function install_rbenv {
   brew install rbenv
+  brew install rbenv-gemset
 }
 dep "Ruby Build Environment" bin=rbenv install=install_rvm
 #####################################################################################################
