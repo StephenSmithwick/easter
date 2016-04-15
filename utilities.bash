@@ -13,6 +13,6 @@ function dep {
     log "will install: $name"
     eval "${install}"
   else
-    log "wont install: $name"
+    log "found already installed: $name"
   fi
 }
