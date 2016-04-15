@@ -10,6 +10,9 @@ source /Users/stephensmithwick/.dvm/dvm.sh
 # Ruby Version Manager
 eval "$(rbenv init -)"
 
+# AWS Tool bash completion
+complete -C aws_completer aws
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Load Locations

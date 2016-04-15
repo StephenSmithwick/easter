@@ -38,6 +38,11 @@ function install_dvm {
 }
 dep "Docker Version Manager" file=~/.dvm/dvm.sh install=install_dvm
 #####################################################################################################
+function install_aws {
+  brew install awscli
+}
+dep "AWS CLI" bin=aws install=install_aws
+#####################################################################################################
 function install_rbenv {
   brew install rbenv
   brew install rbenv-gemset
