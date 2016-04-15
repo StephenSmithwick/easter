@@ -11,4 +11,3 @@ mv $GIST-$VERSION/* $HOME/easter
 rm -r $GIST-$VERSION
 
 bash $HOME/easter/install.bash
-bash -c "$(curl -fsSL https://gist.github.com/StephenSmithwick/59cb017eeedc9396cd94/raw/download.bash)"
