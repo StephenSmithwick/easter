@@ -50,7 +50,7 @@ function install_rbenv {
 dep "Ruby Build Environment" bin=rbenv install=install_rvm
 #####################################################################################################
 function install_lastpass {
-  brew install lastpass-cli --with-pinentry --with-doc`
+  brew install lastpass-cli --with-pinentry --with-doc
 }
 dep "LastPass" bin=lpass install=install_lastpass
 #####################################################################################################
