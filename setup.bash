@@ -27,4 +27,12 @@ function easter() {
   echo "Easter is installed"
 }
 
+export JAVA_HOME=$(/usr/libexec/java_home)
+export HISTCONTROL=ignoredups
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+
 export -f easter
+
+# One of @janmoesen‚Äôs ProTip‚Ñ¢s
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do alias "$method"="lwp-request -e -m '$method'"; done
