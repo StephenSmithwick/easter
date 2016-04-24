@@ -59,3 +59,4 @@ function install_nvm {
 }
 dep "Node Version Manager" bin=nvm install=install_nvm
 #####################################################################################################
+source $HOME/easter/setup.bash

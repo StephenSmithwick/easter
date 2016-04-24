@@ -7,9 +7,11 @@ function dep {
   local file bin install
   local "${@}"
   if [ ! -z ${file} ] && [ ! -f "${file}" ]; then
+    # Dependency file not found
     log "will install: $name"
     eval "${install}"
   elif [ ! -z ${bin} ] && [ ! $(command -v ${bin}) ]; then
+    # Dependency bin not on path
     log "will install: $name"
     eval "${install}"
   else
