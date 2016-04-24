@@ -55,7 +55,7 @@ function install_lastpass {
 dep "LastPass CLI" bin=lpass install=install_lastpass
 #####################################################################################################
 function install_nvm {
-  git clone https://github.com/creationix/nvm.git $HOME/.nvm && cd $HOME/.nvm && git checkout `git describe --abbrev=0 --tags
+  git clone https://github.com/creationix/nvm.git $HOME/.nvm && cd $HOME/.nvm && git checkout `git describe --abbrev=0 --tags`
   . ~/.nvm/nvm.sh
 }
 dep "Node Version Manager" bin=nvm install=install_nvm
