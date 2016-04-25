@@ -66,6 +66,4 @@ function install_emacs {
 }
 dep "Emacs" dir="/usr/local/Cellar/emacs" install=install_emacs
 #####################################################################################################
-}
-
 . $HOME/easter/setup.bash
