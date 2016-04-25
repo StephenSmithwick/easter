@@ -61,7 +61,7 @@ function install_nvm {
 dep "Node Version Manager" bin=nvm install=install_nvm
 #####################################################################################################
 function install_emacs {
-  brew install emacs --HEAD --with-cocoa
+  brew install emacs --with-cocoa
   brew linkapps emacs
 }
 dep "Emacs" dir="/usr/local/Cellar/emacs" install=install_emacs
