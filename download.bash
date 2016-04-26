@@ -1,6 +1,6 @@
 #! /bin/bash
 
-echo "Downloading Easter Project:"
+echo "Fetching Easter Project:"
 
 GIST=59cb017eeedc9396cd94
 
