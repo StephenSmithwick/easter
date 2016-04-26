@@ -5,7 +5,7 @@ source "$HOME/easter/utilities.bash"
 echo "Installing Easter Project:"
 #####################################################################################################
 function add_easter_to_profile {
-  echo 'source $HOME/easter/setup.bash' >> $HOME/.bash_profile
+  echo 'source $HOME/easter/rc.bash' >> $HOME/.bash_profile
 }
 dep "Profile setup" bin=easter install=add_easter_to_profile
 #####################################################################################################

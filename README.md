@@ -7,4 +7,4 @@ This project is a small gist to install all the dependencies that I usually need
 Download and install/update:
 
 echo "Fetching Easter Project:"
-```bash -c "$(curl -fsSL https://gist.githubusercontent.com/StephenSmithwick/59cb017eeedc9396cd94/raw/update.bash)"```
+```bash -c "$(curl -fsSL https://gist.githubusercontent.com/StephenSmithwick/59cb017eeedc9396cd94/raw/setup.bash)"```
