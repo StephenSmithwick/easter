@@ -2,7 +2,7 @@
 
 source "$HOME/easter/utilities.bash"
 
-echo "Installing Easter Project:"
+echo "Checking Easter Dependencies:"
 #####################################################################################################
 function add_easter_to_profile {
   echo 'source $HOME/easter/rc.bash' >> $HOME/.bash_profile

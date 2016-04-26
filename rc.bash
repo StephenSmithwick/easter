@@ -24,7 +24,6 @@ source $DIR/location*
 
 # Helper function
 function easter() {
-  echo "Updating Easter Project:"
   bash -x $HOME/easter/update
 }
 
