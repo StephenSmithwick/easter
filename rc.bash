@@ -24,7 +24,7 @@ source $DIR/location*
 
 # Helper function
 function easter() {
-  bash -x $HOME/easter/fetch.bash
+  bash $HOME/easter/fetch.bash
 }
 
 export JAVA_HOME=$(/usr/libexec/java_home)
