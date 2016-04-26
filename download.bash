@@ -2,12 +2,14 @@
 
 echo "Downloading Easter Project:"
 
-GIST=59cb017eeedc9396cd94 VERSION=HEAD
+GIST=59cb017eeedc9396cd94
 
-wget -qO- https://gist.github.com/StephenSmithwick/$GIST/archive/$VERSION.zip | bsdtar -xvf- 
-
-mkdir -p $HOME/easter
-mv $GIST-$VERSION/* $HOME/easter
-rm -r $GIST-$VERSION
+if [ -d $HOME/easter/.git ]; then
+  pushd $HOME/easter
+  git pull
+  popd
+else
+  git clone https://gist.github.com/$GIST.git 
+fi
 
 bash $HOME/easter/install.bash
