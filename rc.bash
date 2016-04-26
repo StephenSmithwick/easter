@@ -31,6 +31,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export HISTCONTROL=ignoredups
 export HISTSIZE=10000
 export HISTFILESIZE=10000
+export EASTER_HOME=$HOME/easter
 
 export -f easter
 

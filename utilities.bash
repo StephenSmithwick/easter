@@ -22,3 +22,13 @@ function dep {
     log "found already installed: $name"
   fi
 }
+
+function deps {
+  local category=$1; shift
+  local title
+  local "${@}"
+
+  echo "Easter ${title}: "
+  . "$EASTER_HOME/deps/${category}.bash"
+  echo
+}
