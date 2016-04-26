@@ -24,7 +24,8 @@ source $DIR/location*
 
 # Helper function
 function easter() {
-  echo "Easter is installed"
+  echo "Updating Easter Project:"
+  bash -x $HOME/easter/update
 }
 
 export JAVA_HOME=$(/usr/libexec/java_home)

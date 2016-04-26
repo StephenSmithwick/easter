@@ -1,7 +1,4 @@
 #! /bin/bash
-
-echo "Fetching Easter Project:"
-
 GIST=59cb017eeedc9396cd94
 
 if [ -d $HOME/easter/.git ]; then
@@ -9,7 +6,7 @@ if [ -d $HOME/easter/.git ]; then
   git pull
   popd
 else
-  git clone https://gist.github.com/$GIST.git 
+  git clone https://gist.github.com/$GIST.git $HOME/easter
 fi
 
 bash $HOME/easter/install.bash
