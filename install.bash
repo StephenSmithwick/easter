@@ -58,7 +58,7 @@ function install_nvm {
   git clone https://github.com/creationix/nvm.git $HOME/.nvm && cd $HOME/.nvm && git checkout `git describe --abbrev=0 --tags`
   . ~/.nvm/nvm.sh
 }
-dep "Node Version Manager" bin=nvm install=install_nvm
+dep "Node Version Manager" dir="$HOME/.nvm" install=install_nvm
 #####################################################################################################
 function install_emacs {
   brew install emacs --with-cocoa
@@ -66,4 +66,5 @@ function install_emacs {
 }
 dep "Emacs" dir="/usr/local/Cellar/emacs" install=install_emacs
 #####################################################################################################
-. $HOME/easter/setup.bash
+
+. $HOME/easter/rc.bash
