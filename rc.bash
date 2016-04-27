@@ -6,7 +6,7 @@ export HISTSIZE=10000
 export HISTFILESIZE=10000
 export EASTER_HOME=$HOME/easter
 
-
+source "$EASTER_HOME/utilities.bash"
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
@@ -35,7 +35,7 @@ done
 
 # Helper function
 function easter() {
-  bash $HOME/easter/fetch.bash
+  bash "$EASTER_HOME/fetch.bash"
 }
 
 export -f easter

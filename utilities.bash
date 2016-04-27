@@ -32,3 +32,12 @@ function deps {
   . "$EASTER_HOME/deps/${category}.bash"
   echo
 }
+
+function location {
+  local host_check message
+  local "${@}"
+  if [ ! -z ${host_check} ] && host ${host_check} &> /dev/null; then
+    echo "${message}"
+    eval "${action}"
+  fi
+}
