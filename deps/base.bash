@@ -17,7 +17,7 @@ dep "HomeBrew" bin=brew install=install_brew
 function install_git {
   brew install git
   rm -r $EASTER_HOME
-  git clone https://gist.github.com/$GIST.git $EASTER_HOME
+  git clone https://github.com/StephenSmithwick/easter.git $EASTER_HOME
 }
 dep "Git" bin=git install=install_git
 

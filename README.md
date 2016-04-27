@@ -2,8 +2,8 @@
 
 by Stephen Smithwick
 
-This project is a small gist to install all the dependencies that I usually need on a new osx install.
+This project is a collection bash scripts which install all the dependencies that I usually need on a new osx install.
 
 Download and install/update:
 
-```bash -c "$(curl -fsSL https://gist.githubusercontent.com/StephenSmithwick/59cb017eeedc9396cd94/raw/fetch.bash)"```
+```bash -c "$(curl -fsSL https://raw.githubusercontent.com/StephenSmithwick/easter/master/fetch.bash)"```
