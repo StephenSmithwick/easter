@@ -16,7 +16,7 @@ elif [ ! $(command -v git) ]; then
   mkdir -p $EASTER_HOME
   mv $REPO-$BRANCH/* $EASTER_HOME
   rm -r $REPO-$BRANCH
-master
+else
   echo "Installing Easter Project:"
   git clone https://github.com/StephenSmithwick/${REPO}.git $EASTER_HOME
 fi
