@@ -1,5 +1,13 @@
 #! /bin/bash
 
+export JAVA_HOME=$(/usr/libexec/java_home)
+export HISTCONTROL=ignoredups
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+export EASTER_HOME=$HOME/easter
+
+
+
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
@@ -20,18 +28,15 @@ complete -C aws_completer aws
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Load Locations
-source $DIR/location*
+for location in `ls $EASTER_HOME/locations`; do 
+  source "$EASTER_HOME/locations/${location}"
+done
+
 
 # Helper function
 function easter() {
   bash $HOME/easter/fetch.bash
 }
-
-export JAVA_HOME=$(/usr/libexec/java_home)
-export HISTCONTROL=ignoredups
-export HISTSIZE=10000
-export HISTFILESIZE=10000
-export EASTER_HOME=$HOME/easter
 
 export -f easter
 
