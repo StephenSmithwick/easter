@@ -3,6 +3,7 @@
 #####################################################################################################
 function add_easter_to_profile {
   echo 'source $HOME/easter/rc.bash' >> $HOME/.bash_profile
+  mkdir -p $EASTER_HOME/locations
 }
 dep "Profile setup" bin=easter install=add_easter_to_profile
 
