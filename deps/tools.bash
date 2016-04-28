@@ -19,8 +19,13 @@ function install_lastpass {
 dep "LastPass CLI" bin=lpass install=install_lastpass
 #####################################################################################################
 function install_emacs {
-  brew install emacs --with-cocoa
+  brew install emacs --with-cocoa --srgb
   brew linkapps emacs
 }
 dep "Emacs" dir="/usr/local/Cellar/emacs" install=install_emacs
+#####################################################################################################
+function install_atom {
+  brew install Caskroom/cask/atom
+}
+dep "Atom" dir="/usr/local/Cellar/atom" install=install_atom
 #####################################################################################################
