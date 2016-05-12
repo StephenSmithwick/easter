@@ -1,5 +1,5 @@
-function log {		
-  echo " - Easter $@"		
+function log {
+  echo " - Easter $@"
 }
 
 function dep {
@@ -35,8 +35,9 @@ function deps {
 
 function location {
   local host_check message
+
   local "${@}"
-  if [ ! -z ${host_check} ] && host ${host_check} &> /dev/null; then
+  if [ ! -z ${host_check} ] && host -W .1 ${host_check} &> /dev/null; then
     echo "${message}"
     eval "${action}"
   fi

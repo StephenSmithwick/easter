@@ -27,5 +27,5 @@ dep "Emacs" dir="/usr/local/Cellar/emacs" install=install_emacs
 function install_atom {
   brew install Caskroom/cask/atom
 }
-dep "Atom" dir="/usr/local/Cellar/atom" install=install_atom
+dep "Atom" dir="/Applications/Atom.app" install=install_atom
 #####################################################################################################

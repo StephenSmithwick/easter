@@ -7,6 +7,12 @@ function install_java {
 dep "Java" bin=java install=install_java
 
 #####################################################################################################
+function install_maven {
+  brew install maven
+}
+dep "Maven" bin=mvn install=install_maven
+
+#####################################################################################################
 function install_dvm {
   curl -sL https://download.getcarina.com/dvm/latest/install.sh | sh
 }
