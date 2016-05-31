@@ -28,10 +28,11 @@ complete -C aws_completer aws
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Load Locations
-for location in `ls $EASTER_HOME/locations`; do 
-  source "$EASTER_HOME/locations/${location}"
+for location in `ls -d $EASTER_HOME/locations/*/`; do
+  if [ -f "${location}rc.bash" ]; then
+    source "${location}rc.bash"
+  fi
 done
-
 
 # Helper function
 function easter() {

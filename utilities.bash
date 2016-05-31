@@ -35,10 +35,21 @@ function deps {
 
 function location {
   local host_check message
-
   local "${@}"
+
   if [ ! -z ${host_check} ] && host -W .1 ${host_check} &> /dev/null; then
     echo "${message}"
     eval "${action}"
+  fi
+}
+
+function location_dep {
+  local name=$1; shift
+  local location gist
+  local "${@}"
+
+  if [ ! -z "${gist}" ] && [ ! -d "$EASTER_HOME/locations/${location}/.git" ]; then
+    log "will install private location: ${name}"
+    git clone "${gist}" "$EASTER_HOME/locations/${location}"
   fi
 }
