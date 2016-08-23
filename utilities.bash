@@ -18,6 +18,10 @@ function dep {
     # Dependency executable: $bin not on path
     log "will install: $name"
     eval "${install}"
+  elif [ ! -z ${brew} ] && ! (brew ls ${brew} &> /dev/null || brew cask ls ${brew} &> /dev/null); then
+    # Dependency brew formula: not found anywhere
+    log "will install: $name"
+    eval "${install}"
   else
     log "found already installed: $name"
   fi

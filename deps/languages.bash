@@ -2,9 +2,9 @@
 
 #####################################################################################################
 function install_java {
-  brew install Caskroom/cask/java
+  brew cask install java
 }
-dep "Java" bin=java install=install_java
+dep "Java" brew=java install=install_java
 
 #####################################################################################################
 function install_maven {
@@ -23,7 +23,7 @@ function install_rbenv {
   brew install rbenv
   brew install rbenv-gemset
 }
-dep "Ruby Build Environment" bin=rbenv install=install_rvm
+dep "Ruby Build Environment" bin=rbenv install=install_rbenv
 
 #####################################################################################################
 function install_nvm {
