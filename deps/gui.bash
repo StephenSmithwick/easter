@@ -1,7 +1,4 @@
 #! /bin/bash
 
-#####################################################################################################
-function install_spectacle {
-  brew cask install spectacle
-}
-dep "Spectacle" brew=spectacle install=install_spectacle
+brew_dep "Spectacle" brew=spectacle cask
+brew_dep "Slack" brew=slack cask

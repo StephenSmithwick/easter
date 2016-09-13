@@ -1,16 +1,6 @@
 #! /bin/bash
 
-#####################################################################################################
-function install_bash_completion {
-  brew install bash-completion
-}
-dep "HomeBrew Bash Completion" file=`brew --prefix`/etc/bash_completion install=install_bash_completion
-
-#####################################################################################################
-function install_aws {
-  brew install awscli
-}
-dep "AWS CLI" bin=aws install=install_aws
+brew_dep "AWS CLI" bin=aws brew=awscli
 
 #####################################################################################################
 function install_lastpass {
@@ -33,8 +23,15 @@ dep "Atom" dir="/Applications/Atom.app" install=install_atom
 
 #####################################################################################################
 function install_youtubedl {
-  brew install youtube-dl
+  brew install ffmpeg rtmpdump youtube-dl
 }
 dep "Youtube Downloader" bin=youtube-dl install=install_youtubedl
+
+#####################################################################################################
+function install_bash_completion {
+  brew install bash-completion
+  brew tap homebrew/completions
+}
+dep "Bash Completion" brew=bash-completion install=install_bash_completion
 
 #####################################################################################################

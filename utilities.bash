@@ -4,7 +4,7 @@ function log {
 
 function dep {
   local name=$1; shift
-  local file bin dir install
+  local file bin dir brew install
   local "${@}"
   if [ ! -z ${file} ] && [ ! -f "${file}" ]; then
     # Dependency file: $file not found
@@ -18,13 +18,30 @@ function dep {
     # Dependency executable: $bin not on path
     log "will install: $name"
     eval "${install}"
-  elif [ ! -z ${brew} ] && ! (brew ls ${brew} &> /dev/null || brew cask ls ${brew} &> /dev/null); then
+  elif [ ! -z ${brew} ] && !(brew ls ${brew} &> /dev/null || brew cask ls ${brew} &> /dev/null); then
     # Dependency brew formula: not found anywhere
     log "will install: $name"
     eval "${install}"
   else
     log "found already installed: $name"
   fi
+}
+
+function brew_dep {
+  local name=$1; shift
+  local brew install
+  local "${@}"
+
+  if [[ "${@}" =~ cask ]]; then
+    function install {
+      brew cask install ${brew}
+    }
+  else
+    function install {
+      brew install ${brew}
+    }
+  fi
+  dep ${name} ${@} install=install
 }
 
 function deps {
@@ -53,7 +70,7 @@ function location_dep {
   local "${@}"
 
   if [ ! -z "${gist}" ] && [ ! -d "$EASTER_HOME/locations/${location}/.git" ]; then
-    log "will install private location: ${name}"
+    log "installing private location: ${name}"
     git clone "${gist}" "$EASTER_HOME/locations/${location}"
   fi
 }

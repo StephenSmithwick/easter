@@ -28,7 +28,16 @@ function install_git {
 dep "Git" bin=git install=install_git
 
 #####################################################################################################
-log "will update brew"
-brew update
+
+function update_brew() {
+  local update_brew
+  local "${@}"
+
+  if [ "${update_brew}" != false ]; then
+    log "will update brew"
+    brew update
+  fi
+}
+update_brew $@
 
 #####################################################################################################

@@ -36,7 +36,7 @@ done
 
 # Helper function
 function easter() {
-  bash "$EASTER_HOME/fetch.bash"
+  bash "$EASTER_HOME/fetch.bash" $@
 }
 
 export -f easter
