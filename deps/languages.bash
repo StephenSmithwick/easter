@@ -9,6 +9,7 @@ dep "Java" brew=java install=install_java
 #####################################################################################################
 function install_maven {
   brew install maven
+  brew install maven-completion
 }
 dep "Maven" bin=mvn install=install_maven
 
@@ -22,6 +23,8 @@ dep "Docker Version Manager" file=~/.dvm/dvm.sh install=install_dvm
 function install_rbenv {
   brew install rbenv
   brew install rbenv-gemset
+  brew install ruby-completion
+  brew install rake-completion
 }
 dep "Ruby Build Environment" bin=rbenv install=install_rbenv
 

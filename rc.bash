@@ -8,9 +8,11 @@ export EASTER_HOME=$HOME/easter
 
 source "$EASTER_HOME/utilities.bash"
 
+# Bash Completion
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
+source "$EASTER_HOME/rc.d/git-completion.bash"
 
 # Docker Version Manager
 source /Users/stephensmithwick/.dvm/dvm.sh

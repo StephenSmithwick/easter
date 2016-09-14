@@ -1,2 +1,3 @@
 locations/*
 deps/private.bash
+rc.d/*

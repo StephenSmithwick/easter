@@ -28,10 +28,9 @@ function install_youtubedl {
 dep "Youtube Downloader" bin=youtube-dl install=install_youtubedl
 
 #####################################################################################################
-function install_bash_completion {
-  brew install bash-completion
-  brew tap homebrew/completions
+function install_youtubedl {
+  brew install libav mplayer ffmpeg rtmpdump youtube-dl
 }
-dep "Bash Completion" brew=bash-completion install=install_bash_completion
+dep "Youtube Downloader" bin=youtube-dl install=install_youtubedl
 
 #####################################################################################################

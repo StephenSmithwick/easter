@@ -25,10 +25,9 @@ function install_git {
   rm -r $EASTER_HOME
   git clone https://github.com/StephenSmithwick/easter.git $EASTER_HOME
 }
-dep "Git" bin=git install=install_git
+dep "git" bin=git install=install_git
 
 #####################################################################################################
-
 function update_brew() {
   local update_brew
   local "${@}"
@@ -39,5 +38,21 @@ function update_brew() {
   fi
 }
 update_brew $@
+
+#####################################################################################################
+function setup_rcd {
+  mkdir $EASTER_HOME/rc.d
+}
+dep "rc.d" dir=$EASTER_HOME/rc.d install=setup_rcd
+
+#####################################################################################################
+function install_bash_completion {
+  brew install bash-completion
+  brew tap homebrew/completions
+  brew install brew-cask-completion
+
+  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o $EASTER_HOME/rc.d/git-completion.bash
+}
+dep "Bash Completion" brew=bash-completion install=install_bash_completion
 
 #####################################################################################################
