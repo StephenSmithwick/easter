@@ -1,6 +1,8 @@
 #! /bin/bash
 
 brew_dep "AWS CLI" bin=aws brew=awscli
+brew_dep "wget" brew=wget
+brew_dep "Atom" brew=atom cask
 
 #####################################################################################################
 function install_lastpass {
@@ -16,20 +18,8 @@ function install_emacs {
 dep "Emacs" dir="/usr/local/Cellar/emacs" install=install_emacs
 
 #####################################################################################################
-function install_atom {
-  brew install Caskroom/cask/atom
-}
-dep "Atom" dir="/Applications/Atom.app" install=install_atom
-
-#####################################################################################################
 function install_youtubedl {
   brew install ffmpeg rtmpdump youtube-dl
-}
-dep "Youtube Downloader" bin=youtube-dl install=install_youtubedl
-
-#####################################################################################################
-function install_youtubedl {
-  brew install libav mplayer ffmpeg rtmpdump youtube-dl
 }
 dep "Youtube Downloader" bin=youtube-dl install=install_youtubedl
 

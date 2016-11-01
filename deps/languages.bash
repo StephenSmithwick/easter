@@ -1,10 +1,6 @@
 #! /bin/bash
 
-#####################################################################################################
-function install_java {
-  brew cask install java
-}
-dep "Java" brew=java install=install_java
+brew_dep "Java" brew=java cask
 
 #####################################################################################################
 function install_maven {
