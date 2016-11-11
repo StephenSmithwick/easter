@@ -23,7 +23,7 @@ function dep {
     log "will install: $name"
     eval "${install}"
   else
-    if [ ! -z ${update} ] && [ "${do_update}" != false ]; then
+    if [ ! -z ${update} ] && [ "${EASTER_UPDATE}" != false ]; then
       log "will update: $name"
       eval "${update}"
     else

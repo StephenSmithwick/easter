@@ -29,12 +29,10 @@ dep "git" bin=git install=install_git
 
 #####################################################################################################
 function update_brew() {
-  local do_update
-  local "${@}"
-
-  if [ "${do_update}" != false ]; then
+  if [ "${EASTER_UPDATE}" != false ]; then
     log "will update brew"
     brew update
+    brew upgrade `brew outdated`
   fi
 }
 update_brew $@

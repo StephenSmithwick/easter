@@ -38,13 +38,18 @@ done
 
 # Helper function
 function easter() {
-  if [[ "${@}" =~ "help" ]]; then
-    echo "easter [help] [do_update=false]"
-    echo "   do_update -- If false, skip update, only install missing dependencies"
-    echo "   help      -- show this message"
-  else
-    bash "$EASTER_HOME/fetch.bash" $@
+  if [[ "${@}" =~ "--skip-updates" ]]; then
+    export EASTER_UPDATE=false
   fi
+
+  if [[ "${@}" =~ "--help" ]]; then
+    echo "easter [--help] [--skip-updates]"
+    echo "   --skip_updates  do not do any updates"
+    echo "   --help          show this message"
+  else
+    bash "$EASTER_HOME/fetch.bash"
+  fi
+  unset EASTER_UPDATE
 }
 
 export -f easter

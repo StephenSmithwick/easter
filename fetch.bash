@@ -3,11 +3,10 @@
 export EASTER_HOME=$HOME/easter
 
 function install_easter() {
-  local "${@}"
   repo="${repo-easter}"
   branch="${branch-master}"
 
-  if [ "${update_easter}" != false ]; then
+  if [ "${EASTER_UPDATE}" != false ]; then
     if [ -d $EASTER_HOME/.git ]; then
       echo "Updating Easter Project:"
       pushd $EASTER_HOME
@@ -27,6 +26,5 @@ function install_easter() {
   fi
 }
 
-
-install_easter $@
-bash $EASTER_HOME/dependencies.bash $@
+install_easter
+bash $EASTER_HOME/dependencies.bash
