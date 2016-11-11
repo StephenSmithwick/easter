@@ -4,7 +4,7 @@ function log {
 
 function dep {
   local name=$1; shift
-  local file bin dir brew install
+  local file bin dir brew install update do_update
   local "${@}"
   if [ ! -z ${file} ] && [ ! -f "${file}" ]; then
     # Dependency file: $file not found
@@ -23,7 +23,12 @@ function dep {
     log "will install: $name"
     eval "${install}"
   else
-    log "found already installed: $name"
+    if [ ! -z ${update} ] && [ "${do_update}" != false ]; then
+      log "will update: $name"
+      eval "${update}"
+    else
+      log "found already installed: $name"
+    fi
   fi
 }
 
@@ -72,5 +77,7 @@ function location_dep {
   if [ ! -z "${gist}" ] && [ ! -d "$EASTER_HOME/locations/${location}/.git" ]; then
     log "installing private location: ${name}"
     git clone "${gist}" "$EASTER_HOME/locations/${location}"
+  else
+    log "has setup: $name"
   fi
 }

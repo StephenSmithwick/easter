@@ -1,6 +1,6 @@
 #! /bin/bash
 
-brew_dep "AWS CLI" bin=aws brew=awscli
+brew_dep "AWS CLI" brew=awscli
 brew_dep "wget" brew=wget
 brew_dep "Atom" brew=atom cask
 
