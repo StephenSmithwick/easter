@@ -28,7 +28,7 @@ function install_git {
 dep "git" bin=git install=install_git
 
 #####################################################################################################
-function update_brew() {
+function update_brew {
   if [ "${EASTER_UPDATE}" != false ]; then
     log "will update brew"
     brew update
