@@ -1,6 +1,7 @@
 #! /bin/bash
 
 brew_dep "Java" brew=java cask
+brew_dep "Java REPL" brew=javarepl
 
 #####################################################################################################
 function install_maven {

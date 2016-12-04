@@ -46,7 +46,7 @@ function brew_dep {
       brew install ${brew}
     }
   fi
-  dep ${name} ${@} install=install
+  dep "${name}" ${@} install=install
 }
 
 function deps {
