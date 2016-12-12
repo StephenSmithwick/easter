@@ -4,6 +4,7 @@ brew_dep "AWS CLI" brew=awscli
 brew_dep "Heroku" brew=heroku
 brew_dep "wget" brew=wget
 brew_dep "Atom" brew=atom cask
+brew_dep "Certbot - LetsEncrypt" brew=certbot
 
 #####################################################################################################
 function install_lastpass {

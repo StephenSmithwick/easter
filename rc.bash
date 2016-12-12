@@ -44,7 +44,7 @@ function easter() {
 
   if [[ "${@}" =~ "--help" ]]; then
     echo "easter [--help] [--skip-updates]"
-    echo "   --skip_updates  do not do any updates"
+    echo "   --skip-updates  do not do any updates"
     echo "   --help          show this message"
   else
     bash "$EASTER_HOME/fetch.bash"
