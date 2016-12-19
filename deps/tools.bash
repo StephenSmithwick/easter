@@ -5,6 +5,16 @@ brew_dep "Heroku" brew=heroku
 brew_dep "wget" brew=wget
 brew_dep "Atom" brew=atom cask
 brew_dep "Certbot - LetsEncrypt" brew=certbot
+brew_dep "CMake" brew=cmake
+
+#####################################################################################################
+function install_gitql {
+  go get -u -d github.com/cloudson/gitql
+  cd $GOPATH/src/github.com/cloudson/gitql
+  make
+  make install
+}
+dep "Install Gitql" bin=git-ql install=install_gitql
 
 #####################################################################################################
 function install_lastpass {

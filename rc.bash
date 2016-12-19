@@ -29,31 +29,6 @@ complete -C aws_completer aws
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Load Locations
-for location in `ls -d $EASTER_HOME/locations/*/`; do
-  if [ -f "${location}rc.bash" ]; then
-    source "${location}rc.bash"
-  fi
-done
-
-# Helper function
-function easter() {
-  if [[ "${@}" =~ "--skip-updates" ]]; then
-    export EASTER_UPDATE=false
-  fi
-
-  if [[ "${@}" =~ "--help" ]]; then
-    echo "easter [--help] [--skip-updates]"
-    echo "   --skip-updates  do not do any updates"
-    echo "   --help          show this message"
-  else
-    bash "$EASTER_HOME/fetch.bash"
-  fi
-  unset EASTER_UPDATE
-}
-
-export -f easter
-
 # One of @janmoesen‚Äôs ProTip‚Ñ¢s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do alias "$method"="lwp-request -e -m '$method'"; done
 
@@ -69,3 +44,12 @@ export PATH=$GRADLE_HOME/bin:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/build-tools/19.1.0:$PATH
+
+# Setup go Environment
+export GOPATH=~/golang
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
+source "$EASTER_HOME/locations.bash"
+source "$EASTER_HOME/easter.bash"
