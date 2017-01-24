@@ -6,6 +6,7 @@ brew_dep "wget" brew=wget
 brew_dep "Atom" brew=atom cask
 brew_dep "Certbot - LetsEncrypt" brew=certbot
 brew_dep "CMake" brew=cmake
+brew_dep "Android File Transfer" brew=android-file-transfer cask
 
 #####################################################################################################
 function install_gitql {
