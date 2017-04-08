@@ -2,6 +2,7 @@
 
 brew_dep "Java" brew=java cask
 brew_dep "Java REPL" brew=javarepl
+brew_dep "Yarn" brew=yarn
 
 #####################################################################################################
 function install_golang {
