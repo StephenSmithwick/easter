@@ -9,6 +9,7 @@ deps persistence title="Persistence"
 deps tools title="Tools"
 deps gui title="GUI Tools"
 deps platforms title="Platform Tools"
+deps tasks title="Task Management Tools"
 deps private title="Locations (Private)"
 
 . $HOME/easter/rc.bash
