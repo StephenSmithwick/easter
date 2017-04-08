@@ -16,7 +16,7 @@ function install_gitql {
   make
   make install
 }
-dep "Install Gitql" bin=git-ql install=install_gitql
+dep "Gitql" bin=git-ql install=install_gitql
 
 #####################################################################################################
 function install_lastpass {
