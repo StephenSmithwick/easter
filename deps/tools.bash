@@ -5,10 +5,12 @@ brew_dep "Heroku" brew=heroku
 brew_dep "wget" brew=wget
 brew_dep "htop" brew=htop
 brew_dep "Atom" brew=atom cask
+brew_dep "Intellij" brew=intellij-idea-ce cask
 brew_dep "Certbot - LetsEncrypt" brew=certbot
 brew_dep "CMake" brew=cmake
 brew_dep "Android File Transfer" brew=android-file-transfer cask
 brew_dep "Google Drive" brew=google-drive cask
+brew_dep "Man in the Middle Proxy (mitmproxy)" brew=mitmproxy
 
 #####################################################################################################
 function install_gitql {
