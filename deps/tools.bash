@@ -11,6 +11,14 @@ brew_dep "CMake" brew=cmake
 brew_dep "Android File Transfer" brew=android-file-transfer cask
 brew_dep "Google Drive" brew=google-drive cask
 brew_dep "Man in the Middle Proxy (mitmproxy)" brew=mitmproxy
+brew_dep "MiniKube - Kubernetes" brew=minikube cask
+
+#####################################################################################################
+function install_vagrant {
+  brew cask install vagrant
+  brew cask install vagrant-manager
+}
+dep "Vagrant" bin=vagrant install=install_vagrant
 
 #####################################################################################################
 function install_gitql {

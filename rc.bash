@@ -5,6 +5,7 @@ export HISTCONTROL=ignoredups
 export HISTSIZE=10000
 export HISTFILESIZE=10000
 export EASTER_HOME=$HOME/easter
+export PATH=$PATH:$EASTER_HOME/bin
 
 source "$EASTER_HOME/utilities.bash"
 
@@ -52,4 +53,3 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 source "$EASTER_HOME/locations.bash"
-source "$EASTER_HOME/easter.bash"

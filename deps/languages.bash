@@ -3,7 +3,6 @@
 brew_dep "Java" brew=java cask
 brew_dep "Java REPL" brew=javarepl
 brew_dep "Yarn" brew=yarn
-brew_dep "Haskel" brew=haskell-stack
 
 #####################################################################################################
 function install_golang {
@@ -22,6 +21,13 @@ function install_golang {
   go get golang.org/x/tools/cmd/godoc
 }
 dep "Go" bin=go install=install_golang
+
+#####################################################################################################
+function install_haskell {
+  brew install haskell-stack
+  stack setup
+}
+dep "Haskell" bin=stacks install=install_haskell
 
 #####################################################################################################
 function install_maven {
