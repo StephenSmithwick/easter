@@ -9,6 +9,7 @@ dep "Profile setup" bin=easter install=add_easter_to_profile
 #####################################################################################################
 function install_xcode {
   sudo xcodebuild -license
+  xcode-select --install
 }
 dep "XCode" bin=gcc install=install_xcode
 
