@@ -6,6 +6,7 @@ brew_dep "wget" brew=wget
 brew_dep "htop" brew=htop
 brew_dep "Atom" brew=atom cask
 brew_dep "Intellij" brew=intellij-idea-ce cask
+brew_dep "Android Studio" brew=android-studio cask
 brew_dep "Certbot - LetsEncrypt" brew=certbot
 brew_dep "CMake" brew=cmake
 brew_dep "Android File Transfer" brew=android-file-transfer cask
