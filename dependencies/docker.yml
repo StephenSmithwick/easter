@@ -1,0 +1,7 @@
+title: Docker
+brew:
+  - docker
+  - docker-compose
+  - docker-compose-completion
+cask:
+  - minikube

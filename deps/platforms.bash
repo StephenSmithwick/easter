@@ -1,8 +1,5 @@
 #! /bin/bash
 
-
-
-
 #####################################################################################################
 function install_android_sdk {
   brew install ant maven gradle android-sdk android-ndk

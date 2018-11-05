@@ -1,0 +1,10 @@
+title: Java
+cask:
+  - java
+  - intellij-idea-ce
+brew:
+  - gradle
+  - maven
+  - maven-completion
+  - javarepl
+  - gradle

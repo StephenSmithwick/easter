@@ -1,26 +1,5 @@
 #! /bin/bash
 
-brew_dep "AWS CLI" brew=awscli
-brew_dep "Heroku" brew=heroku
-brew_dep "wget" brew=wget
-brew_dep "htop" brew=htop
-brew_dep "Atom" brew=atom cask
-brew_dep "Intellij" brew=intellij-idea-ce cask
-brew_dep "Android Studio" brew=android-studio cask
-brew_dep "Certbot - LetsEncrypt" brew=certbot
-brew_dep "CMake" brew=cmake
-brew_dep "Android File Transfer" brew=android-file-transfer cask
-brew_dep "Google Drive" brew=google-drive cask
-brew_dep "Man in the Middle Proxy (mitmproxy)" brew=mitmproxy
-brew_dep "MiniKube - Kubernetes" brew=minikube cask
-
-#####################################################################################################
-function install_vagrant {
-  brew cask install vagrant
-  brew cask install vagrant-manager
-}
-dep "Vagrant" bin=vagrant install=install_vagrant
-
 #####################################################################################################
 function install_gitql {
   go get -u -d github.com/cloudson/gitql

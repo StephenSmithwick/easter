@@ -81,3 +81,7 @@ function location_dep {
     log "has setup: $name"
   fi
 }
+
+function install {
+  ruby -I $EASTER_HOME/src $EASTER_HOME/src/install.rb $@
+}

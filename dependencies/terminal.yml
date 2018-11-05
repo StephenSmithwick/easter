@@ -1,0 +1,10 @@
+title: Terminal Tools
+brew:
+  - awscli
+  - heroku
+  - wget
+  - htop
+  - heroku
+  - certbot
+  - cmake
+  - mitmproxy

@@ -1,0 +1,8 @@
+title: GUI Tools
+cask:
+  - spectacle
+  - slack
+  - sourcetree
+  - vlc
+  - atom
+  - google-drive
