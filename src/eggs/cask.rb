@@ -1,15 +1,15 @@
 require 'simple_struct'
 
-module Resolvers
+module Eggs
   class Cask < SimpleStruct(:title, :formula)
     def self.handles?(type)
       type == "cask"
     end
 
-    def self.dependency(item)
-      case item
-      when Hash then   Cask.new(item)
-      when String then Cask.new(title: item, formula: item)
+    def self.parse(value)
+      case value
+      when Hash then   Cask.new(value)
+      when String then Cask.new(title: value, formula: value)
       else raise "#{item} not understood properly as a Cask"
       end
     end

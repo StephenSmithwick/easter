@@ -3,22 +3,7 @@
 brew_dep "Yarn" brew=yarn
 
 #####################################################################################################
-function install_golang {
-  echo "Please enter your github username for go (ex: stephensmithwick):"
-  read user
 
-  brew install golang
-  export GOPATH=~/golang
-  export GOROOT=/usr/local/opt/go/libexec
-  export PATH=$PATH:$GOPATH/bin
-  export PATH=$PATH:$GOROOT/bin
-
-  #setup golang path and user
-  mkdir -p ~/golang/src/github.com/$user
-
-  go get golang.org/x/tools/cmd/godoc
-}
-dep "Go" bin=go install=install_golang
 
 #####################################################################################################
 function install_haskell {

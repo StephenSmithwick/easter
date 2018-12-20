@@ -38,8 +38,7 @@ export MAVEN_HOME=/usr/local/opt/maven
 export GRADLE_HOME=/usr/local/opt/gradle
 export ANDROID_HOME=/Users/stephensmithwick/Library/Android/sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
-export PATH=$MAVEN_HOME/bin:$PATH
-export PATH=$GRADLE_HOME/bin:$PATH
+export PATH=$GRADLE_HOME/bin:$MAVEN_HOME/bin:$PATH
 
 # Setup go Environment
 export GOPATH=~/golang

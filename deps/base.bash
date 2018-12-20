@@ -7,13 +7,6 @@ function add_easter_to_profile {
 dep "Profile setup" bin=easter install=add_easter_to_profile
 
 #####################################################################################################
-function install_xcode {
-  sudo xcodebuild -license
-  xcode-select --install
-}
-dep "XCode" bin=gcc install=install_xcode
-
-#####################################################################################################
 function install_brew {
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew tap caskroom/cask

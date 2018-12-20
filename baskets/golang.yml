@@ -1,0 +1,12 @@
+title: Go Lang
+shell:
+  - bin: go
+    ask:
+      user: "Please enter your github username for go (ex: stephensmithwick):"
+    script:
+      - brew install golang
+      - export GOPATH=~/golang
+      - export GOROOT=/usr/local/opt/go/libexec
+      - export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+      - mkdir -p ~/golang/src/github.com/%{user}
+      - go get golang.org/x/tools/cmd/godoc

@@ -35,6 +35,10 @@ def colorize(color, text)
   "#{color}#{text}#{RESET}"
 end
 
+def colorIcon(color, icon)
+  "#{color}#{ICONS[icon]}#{RESET}"
+end
+
 ICONS = {
   diamond: "\u25C6",
   diamond_outline: "\u25C7",
@@ -47,8 +51,10 @@ ICONS = {
   radio_unselect: "\u25CE",
   tree: '🌳',
   seedling: "🌱",
+  hen: '🐔',
   egg: '🥚',
-  baby_chick: '🐣',
+  hatching_chick: '🐣',
+  baby_chick: '🐤',
   sun: '☀️'
 }
 
