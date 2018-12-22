@@ -24,9 +24,3 @@ function install_nvm {
   . ~/.nvm/nvm.sh
 }
 dep "Node Version Manager" dir="$HOME/.nvm" install=install_nvm
-
-#####################################################################################################
-function install_reason {
-  npm install -g git://github.com/reasonml/reason-cli.git
-}
-dep "Reason" bin=ocamlmerlin-reason install=install_reason

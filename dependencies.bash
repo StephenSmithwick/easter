@@ -9,8 +9,8 @@ echo "Checking Easter Dependencies:"
 # deps platforms title="Platform Tools"
 # deps private title="Locations (Private)"
 
-for egg in `ls  $EASTER_HOME/baskets/*.yml`; do
-  install --yml ${egg}
+for basket in `ls  $EASTER_HOME/baskets/*.yml`; do
+  install --yml ${basket}
 done
 
 . $HOME/easter/rc.bash

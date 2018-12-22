@@ -30,9 +30,9 @@ module Eggs
     def ask_responses
       ask.map do |key, question|
         puts question
-        response = gets
+        response = gets.strip
 
-        [key, response]
+        [key.to_sym, response]
       end.to_h if ask
     end
 

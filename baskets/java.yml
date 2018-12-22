@@ -6,5 +6,3 @@ brew:
   - gradle
   - maven
   - maven-completion
-  - javarepl
-  - gradle

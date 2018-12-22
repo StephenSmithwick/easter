@@ -35,7 +35,7 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do alias "$method"="lwp-re
 
 # Setup Android SDK
 export MAVEN_HOME=/usr/local/opt/maven
-export GRADLE_HOME=/usr/local/opt/gradle
+export GRADLE_HOME=$(realpath $(brew --prefix gradle))/libexec
 export ANDROID_HOME=/Users/stephensmithwick/Library/Android/sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$GRADLE_HOME/bin:$MAVEN_HOME/bin:$PATH
