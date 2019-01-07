@@ -11,14 +11,15 @@ class Basket < SimpleStruct(:title, :eggs)
 
     Basket.new(
       title: yaml['title'],
-      eggs: yaml
-      .reject { |key| ['title'].include? key }
-      .flat_map do | egg_type, eggs_yaml |
-        egg_loader = egg_loaders.find{|egg| egg.handles? egg_type}
-        raise "Unknown egg type: #{egg_type}" unless egg_loader
+      eggs: yaml['basket'].flat_map do | eggs |
+        eggs.flat_map do | egg_type, egg_list |
+          egg_loader = egg_loaders.find{|egg| egg.handles? egg_type}
+          raise "In file: #{yaml_file}\n - Unknown egg type: #{egg_type}"  unless egg_loader
+          raise "In file: #{yaml_file}\n - No eggs found for: #{egg_type}" unless egg_list
 
-        eggs_yaml.map do | egg_yaml |
+          egg_list.map do | egg_yaml |
             egg_loader.parse(egg_yaml)
+          end
         end
       end)
   end

@@ -1,6 +1,7 @@
 title: Ruby
-brew:
-- rbenv
-- rbenv-gemset
-- ruby-completion
-- rake-completion
+basket:
+- brew:
+  - rbenv
+  - rbenv-gemset
+  - ruby-completion
+  - rake-completion

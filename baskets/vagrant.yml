@@ -1,4 +1,5 @@
 title: Vagrant
-cask:
+basket:
+- cask:
   - vagrant
   - vagrant-manager

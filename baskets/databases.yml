@@ -1,3 +1,4 @@
 title: Databases
-brew:
-- postgresql
+basket:
+- brew:
+  - postgresql

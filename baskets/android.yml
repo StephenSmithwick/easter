@@ -1,4 +1,5 @@
 title: Android
-cask:
+basket:
+- cask:
   - android-studio
   - android-file-transfer

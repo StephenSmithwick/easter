@@ -1,6 +1,6 @@
 #! /bin/bash
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+
 export HISTCONTROL=ignoredups
 export HISTSIZE=10000
 export HISTFILESIZE=10000
@@ -33,9 +33,11 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # One of @janmoesen‚Äôs ProTip‚Ñ¢s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do alias "$method"="lwp-request -e -m '$method'"; done
 
-# Setup Android SDK
+# Setup java and Android SDK
+export JAVA_HOME=$(/usr/libexec/java_home)
 export MAVEN_HOME=/usr/local/opt/maven
 export GRADLE_HOME=$(realpath $(brew --prefix gradle))/libexec
+export GRADLE_USER_HOME=$GRADLE_HOME
 export ANDROID_HOME=/Users/stephensmithwick/Library/Android/sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 export PATH=$GRADLE_HOME/bin:$MAVEN_HOME/bin:$PATH

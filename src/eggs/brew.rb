@@ -18,6 +18,9 @@ module Eggs
       `brew ls`.split.include?(formula)
     end
 
+    def latest?
+    end
+
     def install
       `brew install #{formula}`
     end

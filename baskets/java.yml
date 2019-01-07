@@ -1,8 +1,9 @@
 title: Java
-cask:
+basket:
+- cask:
   - java
   - intellij-idea-ce
-brew:
+- brew:
   - gradle
   - maven
   - maven-completion

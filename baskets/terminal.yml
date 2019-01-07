@@ -1,5 +1,6 @@
 title: Terminal Tools
-brew:
+basket:
+- brew:
   - awscli
   - heroku
   - wget

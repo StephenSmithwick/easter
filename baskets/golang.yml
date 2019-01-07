@@ -1,5 +1,6 @@
 title: Go Lang
-shell:
+basket:
+- shell:
   - bin: go
     ask:
       user: "Please enter your github username for go (ex: stephensmithwick):"
