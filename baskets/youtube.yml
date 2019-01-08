@@ -1,0 +1,6 @@
+title: Youtube tools
+basket:
+- brew:
+  - ffmpeg
+  - rtmpdump
+  - youtube-dl

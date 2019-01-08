@@ -1,5 +1,6 @@
 title: GUI Tools
 basket:
+
 - cask:
   - spectacle
   - slack
@@ -7,3 +8,4 @@ basket:
   - vlc
   - atom
   - google-drive
+  - emacs

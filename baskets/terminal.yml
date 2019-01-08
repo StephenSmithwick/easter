@@ -1,5 +1,6 @@
 title: Terminal Tools
 basket:
+
 - brew:
   - awscli
   - heroku
@@ -10,3 +11,23 @@ basket:
   - cmake
   - mitmproxy
   - bash-completion
+
+- brew:
+  - formula: lastpass-cli
+    options: --with-pinentry --with-doc
+
+- shell:
+  - bin: git-ql
+    script: |
+      go get -u -d github.com/cloudson/gitql
+      cd $GOPATH/src/github.com/cloudson/gitql
+      make
+      make install
+
+    # function install_gitql {
+    #   go get -u -d github.com/cloudson/gitql
+    #   cd $GOPATH/src/github.com/cloudson/gitql
+    #   make
+    #   make install
+    # }
+    # dep "Gitql" bin=git-ql install=install_gitql

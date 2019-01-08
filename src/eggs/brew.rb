@@ -1,7 +1,7 @@
 require 'simple_struct'
 
 module Eggs
-  class Brew < SimpleStruct(:title, :formula)
+  class Brew < SimpleStruct(:title, :formula, :options)
     def self.handles?(type)
       type == "brew"
     end
@@ -9,7 +9,7 @@ module Eggs
     def self.parse(value)
       case value
       when Hash then   Brew.new(value)
-      when String then Brew.new(title: value, formula: value)
+      when String then Brew.new(formula: value)
       else raise "#{item} not understood properly as a Brew"
       end
     end
@@ -18,8 +18,12 @@ module Eggs
       `brew ls`.split.include?(formula)
     end
 
+    def title
+      super || formula
+    end
+
     def install
-      `brew install #{formula}`
+      `brew install #{formula} #{options}`
     end
   end
 end
