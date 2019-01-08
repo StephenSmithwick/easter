@@ -58,30 +58,3 @@ function deps {
   . "$EASTER_HOME/deps/${category}.bash"
   echo
 }
-
-function location {
-  local host_check message
-  local "${@}"
-
-  if [ ! -z ${host_check} ] && host -W .01 ${host_check} &> /dev/null; then
-    echo "${message}"
-    eval "${action}"
-  fi
-}
-
-function location_dep {
-  local name=$1; shift
-  local location gist
-  local "${@}"
-
-  if [ ! -z "${gist}" ] && [ ! -d "$EASTER_HOME/locations/${location}/.git" ]; then
-    log "installing private location: ${name}"
-    git clone "${gist}" "$EASTER_HOME/locations/${location}"
-  else
-    log "has setup: $name"
-  fi
-}
-
-function install {
-  ruby -I $EASTER_HOME/src $EASTER_HOME/src/install.rb $@
-}

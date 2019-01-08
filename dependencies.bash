@@ -10,7 +10,7 @@ echo "Checking Easter Dependencies:"
 # deps private title="Locations (Private)"
 
 for basket in `ls  $EASTER_HOME/baskets/*.yml`; do
-  install --yml ${basket}
+  ruby -I $EASTER_HOME/src $EASTER_HOME/src/install.rb --yml ${basket}
 done
 
 . $HOME/easter/rc.bash

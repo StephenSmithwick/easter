@@ -38,13 +38,3 @@ function setup_rcd {
 dep "rc.d" dir=$EASTER_HOME/rc.d install=setup_rcd
 
 #####################################################################################################
-function install_bash_completion {
-  brew install bash-completion
-  brew tap homebrew/completions
-  brew install brew-cask-completion
-
-  curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o $EASTER_HOME/rc.d/git-completion.bash
-}
-dep "Bash Completion" brew=bash-completion install=install_bash_completion
-
-#####################################################################################################

@@ -9,3 +9,4 @@ basket:
   - certbot
   - cmake
   - mitmproxy
+  - bash-completion
