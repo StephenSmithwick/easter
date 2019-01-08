@@ -16,7 +16,7 @@ module Eggs
     end
 
     def install
-      shell(script,ask_responses)
+      shell(script % ask_responses)
     end
 
     def assert?
@@ -36,9 +36,8 @@ module Eggs
       end.to_h if ask
     end
 
-    def shell(cmd, replace = {})
-      command = cmd.is_a?(Array) ? cmd.join("; ") : cmd
-      `#{command % replace}`.strip
+    def shell(command)
+      `#{command.split("\n").join("; ")}`.strip
     end
   end
 end
