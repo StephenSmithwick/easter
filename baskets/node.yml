@@ -4,6 +4,6 @@ basket:
 - shell:
   - title: nvm
     exists: ~/.nvm/nvm.sh
-    script:
+    script: |
       git clone https://github.com/creationix/nvm.git $HOME/.nvm && cd $HOME/.nvm && git checkout `git describe --abbrev=0 --tags`
       . ~/.nvm/nvm.sh

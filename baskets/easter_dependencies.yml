@@ -3,11 +3,11 @@ basket:
 - shell:
   - title: xcode
     assert: { that: "xcode-select -p", is: "/Applications/Xcode.app/Contents/Developer"}
-    script:
-      - xcode-select --install
-      - sudo xcodebuild -license
+    script: |
+      xcode-select --install
+      sudo xcodebuild -license
   - bin: brew
-    script:
+    script: |
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew tap caskroom/cask
 - brew:

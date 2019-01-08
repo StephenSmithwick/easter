@@ -1,0 +1,7 @@
+title: Haskell
+basket:
+- shell:
+  - bin: haskell
+    script: |
+      brew install haskell-stack
+      stack setup
