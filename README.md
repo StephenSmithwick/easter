@@ -4,7 +4,11 @@ A collection of OSX setup scripts.
 
 ## Getting Started
 
-This project is a collection bash and ruby scripts which install all the dependencies that I usually need on a new osx install. It will install the easter source code in ~/easter.  Dependencies listed under
+This project is a collection bash and ruby scripts which install all the dependencies that I usually need on a new osx install. It will install the easter source code in ~/easter.  
+
+Individual dependencies(eggs) are grouped into baskets.  A basket file is a yaml file which declaratively
+lists the eggs which must be installed.  Eggs can be described as brew, cask or shell dependencies with their
+own syntax and way to determine if they are installed and how to install them.
 
 ### Prerequisites
 
