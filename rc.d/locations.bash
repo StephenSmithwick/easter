@@ -10,19 +10,6 @@ function location {
   fi
 }
 
-function location_dep {
-  local name=$1; shift
-  local location gist
-  local "${@}"
-
-  if [ ! -z "${gist}" ] && [ ! -d "$EASTER_HOME/locations/${location}/.git" ]; then
-    log "installing private location: ${name}"
-    git clone "${gist}" "$EASTER_HOME/locations/${location}"
-  else
-    log "has setup: $name"
-  fi
-}
-
 # Load Locations
 for location in `ls -d $EASTER_HOME/locations/*/`; do
   if [ -f "${location}rc.bash" ]; then

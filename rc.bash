@@ -7,7 +7,7 @@ export EASTER_HOME=$HOME/easter
 export PATH=$PATH:$EASTER_HOME/bin
 
 for rc_file in $EASTER_HOME/rc.d/*; do
-  echo "Loading $rc_file"
+  # echo "Loading $rc_file"
   source "$rc_file"
 done
 
