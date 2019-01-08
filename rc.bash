@@ -11,10 +11,6 @@ for rc_file in $EASTER_HOME/rc.d/*; do
   source "$rc_file"
 done
 
-# Node Version Manager
-export NVM_DIR="/Users/stephensmithwick/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # One of @janmoesen‚Äôs ProTip‚Ñ¢s

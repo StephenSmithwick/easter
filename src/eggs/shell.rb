@@ -1,7 +1,7 @@
 require 'simple_struct'
 
 module Eggs
-  class Shell < SimpleStruct(:title, :bin, :assert, :script, :ask)
+  class Shell < SimpleStruct(:title, :bin, :assert, :exists, :script, :ask)
     def self.handles?(type)
       type == "shell"
     end
@@ -12,7 +12,7 @@ module Eggs
     end
 
     def installed?
-      assert? && bin?
+      assert? && bin? && file_exists?
     end
 
     def install
@@ -25,6 +25,10 @@ module Eggs
 
     def bin?
       bin.nil? || ! shell("which #{bin}").empty?
+    end
+
+    def file_exists?
+      exists.nil? || File.exist?(exists)
     end
 
     def ask_responses
