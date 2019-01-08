@@ -4,7 +4,7 @@ A collection of OSX setup scripts.
 
 ## Getting Started
 
-This project is a collection bash and ruby scripts which install all the dependencies that I usually need on a new osx install. It will install the easter source code in ~/easter.  Dependencies listed under 
+This project is a collection bash and ruby scripts which install all the dependencies that I usually need on a new osx install. It will install the easter source code in ~/easter.  Dependencies listed under
 
 ### Prerequisites
 
