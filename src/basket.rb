@@ -1,26 +1,38 @@
 require 'optparse'
 require 'yaml'
 require 'simple_struct'
+require 'eggs/all'
 
-$LOAD_PATH.map {|lp|  Dir[File.expand_path('eggs/*.rb', lp)] }.flatten.each {|file| require file }
-
-class Basket < SimpleStruct(:title, :eggs)
+class Basket < SimpleStruct(:file, :title, :basket)
   def self.load(yaml_file)
-    egg_loaders = Eggs.constants.map{|c| Eggs.const_get(c)}.select {|c| c.is_a? Class}
     yaml = YAML.load(File.open(yaml_file))
 
-    Basket.new(
-      title: yaml['title'],
-      eggs: yaml['basket'].flat_map do | eggs |
-        eggs.flat_map do | egg_type, egg_list |
-          egg_loader = egg_loaders.find{|egg| egg.handles? egg_type}
-          raise "In file: #{yaml_file}\n - Unknown egg type: #{egg_type}"  unless egg_loader
-          raise "In file: #{yaml_file}\n - No eggs found for: #{egg_type}" unless egg_list
-
-          egg_list.map do | egg_yaml |
-            egg_loader.parse(egg_yaml)
-          end
-        end
-      end)
+    Basket.new(file: yaml_file, title: yaml['title'], basket: yaml['basket']).validate
   end
+
+  def egg_map
+    basket.flat_map do | eggs |
+      eggs.flat_map do | type, value |
+        [*value].map do |egg_yaml|
+          yield type, egg_yaml
+        end
+      end
+    end
+  end
+
+  def validate
+    egg_map do | type |
+      clazz = Eggs::All[type]
+      raise "from #{file} - Unknown type: '#{type}'"  if clazz.nil?
+    end
+
+    self
+  end
+
+  def eggs
+    @eggs ||= egg_map do |type, egg_yaml|
+      Eggs::All[type].parse(egg_yaml)
+    end
+  end
+
 end

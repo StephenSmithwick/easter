@@ -17,13 +17,28 @@ def ls
     .join("\n")
 end
 
+def install(basket)
+  lb(basket).eggs.each do |egg|
+    puts "Checking: #{egg.title} - installed: #{egg.installed?}"
+    egg.install unless egg.installed?
+  end
+end
+
 def instructions
-  puts "Load a basket by: "
-  puts "> lb [basket]"
-  puts "List baskets by: "
-  puts "> ls"
-  puts "Display this help messgae by: "
-  puts "> instructions"
+  puts <<~END_HELP
+    __--:[Easter-REPL]:--__
+    List baskets:
+    > ls
+
+    Load a basket:
+    > lb [basket]
+
+    Install basket:
+    > install [basket]
+
+    Display this help messgae by:
+    > instructions
+  END_HELP
 end
 
 instructions

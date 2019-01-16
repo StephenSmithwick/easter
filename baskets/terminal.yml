@@ -1,6 +1,8 @@
 title: Terminal Tools
 basket:
 
+- cask: iterm2
+
 - brew:
   - awscli
   - heroku
