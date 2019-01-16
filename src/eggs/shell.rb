@@ -28,7 +28,7 @@ module Eggs
     end
 
     def file_exists?
-      exists.nil? || File.exist?(exists)
+      exists.nil? || File.exist?(File.expand_path exists)
     end
 
     def ask_responses

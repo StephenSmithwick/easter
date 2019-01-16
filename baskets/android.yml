@@ -3,3 +3,14 @@ basket:
 - cask:
   - android-studio
   - android-file-transfer
+
+- brew:
+  - ant
+  - maven
+  - gradle
+
+- shell:
+  - bin: android
+    script: |
+      brew cask install android-sdk
+      android update sdk --no-ui
