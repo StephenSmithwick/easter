@@ -1,7 +1,7 @@
 title: Haskell
 basket:
 - shell:
-  - bin: haskell
+  - bin: ghc
     script: |
       brew install haskell-stack
       stack setup

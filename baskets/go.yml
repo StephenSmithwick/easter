@@ -4,7 +4,7 @@ basket:
   - bin: go
     ask:
       user: "Please enter your github username for go (ex: stephensmithwick):"
-    script:
+    script: |
       brew install go
       export GOPATH=~/golang
       export GOROOT=/usr/local/opt/go/libexec

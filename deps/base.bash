@@ -10,6 +10,7 @@ dep "Profile setup" bin=easter install=add_easter_to_profile
 function install_brew {
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew tap caskroom/cask
+  brew tap caskroom/versions
 }
 dep "HomeBrew" bin=brew install=install_brew
 

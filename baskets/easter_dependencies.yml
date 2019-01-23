@@ -2,7 +2,7 @@ title: Easter Dependencies
 basket:
 - shell:
   - title: xcode
-    assert: { that: "xcode-select -p", is: "/Applications/Xcode.app/Contents/Developer"}
+    assert: that xcode-select -p is /Applications/Xcode.app/Contents/Developer
     script: |
       xcode-select --install
       sudo xcodebuild -license

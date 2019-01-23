@@ -2,8 +2,19 @@ title: Java
 basket:
 - cask:
   - java
+  - java@8
   - intellij-idea-ce
 - brew:
   - gradle
   - maven
   - maven-completion
+- shell:
+  - bin: jenv
+    eval:
+      java: /usr/libexec/java_home
+      java8: /usr/libexec/java_home -v 1.8
+    script: |
+      brew install jenv
+      $(jenv init -)
+      jenv add "%{java}"
+      jenv add "%{java8}"
