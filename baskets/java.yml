@@ -3,8 +3,8 @@ basket:
 - cask:
   - java
   - java@8
-  - intellij-idea-ce
 - brew:
+  - kotlin
   - gradle
   - maven
   - maven-completion
