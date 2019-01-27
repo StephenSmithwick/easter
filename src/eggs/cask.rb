@@ -32,8 +32,8 @@ module Eggs
       `brew cask ls`.split.include?(versioned_formula)
     end
 
-    def install
-      `brew cask install #{versioned_formula} #{options}`
+    def install(install_options=nil)
+      `brew cask install #{versioned_formula} #{options} #{install_options if install_options}`
     end
   end
 end

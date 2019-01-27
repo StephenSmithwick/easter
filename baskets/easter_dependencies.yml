@@ -2,7 +2,7 @@ title: Easter Dependencies
 basket:
 - shell:
   - title: xcode
-    assert: that xcode-select -p is /Applications/Xcode.app/Contents/Developer
+    assert: that xcode-select -p is /Library/Developer/CommandLineTools
     script: |
       xcode-select --install
       sudo xcodebuild -license
@@ -10,5 +10,13 @@ basket:
     script: |
       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       brew tap caskroom/cask
-- brew:
-  - coreutils
+  - bin: git
+    script: |
+      brew install git
+      rm -r $EASTER_HOME
+      git clone https://github.com/StephenSmithwick/easter.git $EASTER_HOME
+  - bin: easter
+    script: |
+      echo 'source $HOME/easter/rc.bash' >> $HOME/.bash_profile
+
+- brew: coreutils

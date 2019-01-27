@@ -5,18 +5,13 @@ basket:
 
 - brew:
   - awscli
-  - heroku
   - wget
   - htop
-  - heroku
   - certbot
   - cmake
   - mitmproxy
   - bash-completion
-
-- brew:
-  - formula: lastpass-cli
-    options: --with-pinentry --with-doc
+  - lastpass-cli --with-pinentry --with-doc
 
 - shell:
   - bin: git-ql

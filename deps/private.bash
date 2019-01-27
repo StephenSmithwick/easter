@@ -1,4 +1,5 @@
 #! /bin/bash
+. $EASTER_HOME/locations.bash
 
 ########## Install private dependencies here#########################################################
 

@@ -4,6 +4,10 @@ if [[ "${@}" =~ "--skip-updates" ]]; then
   export EASTER_UPDATE=false
 fi
 
+if [[ "${@}" =~ "--force" ]]; then
+  export BREW_OPTIONS="--force"
+fi
+
 if [[ "${@}" =~ "--help" ]]; then
   echo "easter [--help] [--skip-updates]"
   echo "   --reload        reload easter scripts in case of location change or script updates"

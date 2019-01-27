@@ -3,5 +3,5 @@ basket:
 - shell:
   - bin: ghc
     script: |
-      brew install haskell-stack
+      brew install haskell-stack cabal-install ghc
       stack setup

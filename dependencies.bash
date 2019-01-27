@@ -1,13 +1,19 @@
 #! /bin/bash
 
-source "$HOME/easter/utilities.bash"
+function install {
+  ruby -I $EASTER_HOME/src $EASTER_HOME/src/install.rb $@
+}
 
 echo "Checking Easter Dependencies:"
-deps base title="Base"
-# deps private title="Locations (Private)"
+install --yml $EASTER_HOME/baskets/easter_dependencies.yml
+
 
 for basket in `ls  $EASTER_HOME/baskets/*.yml`; do
-  ruby -I $EASTER_HOME/src $EASTER_HOME/src/install.rb --yml ${basket}
+  install --yml ${basket} $BREW_OPTIONS
 done
 
-. $HOME/easter/rc.bash
+. $EASTER_HOME/rc.bash
+
+###### Legacy location logic
+echo "🐔 Locations"
+. $EASTER_HOME/deps/private.bash

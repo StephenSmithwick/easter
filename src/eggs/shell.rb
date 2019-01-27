@@ -28,9 +28,8 @@ module Eggs
       assert? && bin? && file_exists?
     end
 
-    def install
+    def install(install_options)
       puts "Installing "
-      puts script % lazy_vars
       shell(script % lazy_vars)
     end
 
